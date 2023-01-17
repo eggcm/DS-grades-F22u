@@ -24,7 +24,7 @@ Papa.parse("./DS-grades-F22u.csv", {
 })
 
 function display() {
-    const id = document.getElementById('student-id').value;
+    const id = document.getElementById('sid-mid').value;
     if (id=="") return;
     // p.innerText = JSON.stringify(data[id]);
     const display = `
