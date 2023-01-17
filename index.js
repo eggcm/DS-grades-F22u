@@ -18,7 +18,7 @@ Papa.parse("./DS-grades-F22u.csv", {
         })
 
         for (const grade of grades) {
-            data[grade[`學號`]]= grade;
+            data[grade[`序號`]]= grade;
         }
 	}
 })
@@ -28,17 +28,22 @@ function display() {
     if (id=="") return;
     // p.innerText = JSON.stringify(data[id]);
     const display = `
-    H1: ${data[id].H1}
-    H2: ${data[id].H2}
-    H3: ${data[id].H3}
-    H4: ${data[id].H4}
-    H5: ${data[id].H5}
-    Mid: ${data[id].Mid}
-    Fin: ${data[id].Fin}
-    CPE: ${data[id].CPE}
-    ATT: ${data[id].ATT}
-    Sem: ${data[id].Sem}
+    SID:  ${data[id].學號}
+    Name: ${data[id].姓名}
+    H1:   ${data[id].H1}
+    H2:   ${data[id].H2}
+    H3:   ${data[id].H3}
+    H4:   ${data[id].H4}
+    H5:   ${data[id].H5}
+    Mid:  ${data[id].Mid}
+    Fin:  ${data[id].Fin}
+    CPE:  ${data[id].CPE}
+    ATT:  ${data[id].ATT}
+    **
+    Sem:  ${data[id].Sem}
+    **
+    The grade is determined by the following rule: (H1+H2+H3+H4+H5)/5*0.4+SQRT(Mid)*10*0.25+SQRT(FIN)*10*0.35+CPE</p>".
+    NOTE thatthe highest grade of this course is 99. If your final grade is large than 99, then you will get 99 at most.
     `;
-    
     p.innerText = display;
 }
