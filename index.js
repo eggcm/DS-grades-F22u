@@ -18,13 +18,13 @@ Papa.parse("./DS-grades-F22u.csv", {
         })
 
         for (const grade of grades) {
-            data[grade[`學號`]]= grade;
+            data[grade[`序號`]]= grade;
         }
 	}
 })
 
 function display() {
-    const id = document.getElementById('student-id').value;
+    const id = document.getElementById('sid-mid').value;
     if (id=="") return;
     // p.innerText = JSON.stringify(data[id]);
     const display = `
